@@ -12,7 +12,7 @@ import java.util.*;
            You need to find the order in which all the people leave the queue.
        */
 
-public class Main {
+public class Solution {
 
     static class Customer {
         int QUEUE_NUMBER;
