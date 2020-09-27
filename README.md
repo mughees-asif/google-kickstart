@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://codingcompetitions.withgoogle.com/kickstart">
-    <img height=85 src="https://i1.wp.com/www.afterschoolafrica.com/wp-content/uploads/2020/04/Google-Kick-Start-2020-Coding-Competition.jpg?fit=560%2C720&ssl=1">
+    <img src="https://i1.wp.com/www.afterschoolafrica.com/wp-content/uploads/2020/04/Google-Kick-Start-2020-Coding-Competition.jpg?fit=560%2C720&ssl=1">
   </a>
 </p>
 
