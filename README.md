@@ -9,7 +9,7 @@
 # Google Kick Start
 
 * Solutions in **Java**
-* Problem statement in code 
+* Problem statement in solution
 
 ----------------------------------------------------------------------------------------------
 
