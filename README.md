@@ -2,13 +2,14 @@
 
 # [Google Kick Start](https://codingcompetitions.withgoogle.com/kickstart)
 
-* Solutions in Java
+* Solutions in *Java*
+* Problem statement in code 
 
 ## 2020
 
 ### Round F:
 
-#### 1. [ATM Queue](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f4ed8) : [Solution] ()
+#### 1. [ATM Queue](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f4ed8) : [Solution](https://github.com/mughees-asif/google-kickstart/blob/master/RoundF/ATMQueue/src/com/mughees/Solution.java)
 
 
 
