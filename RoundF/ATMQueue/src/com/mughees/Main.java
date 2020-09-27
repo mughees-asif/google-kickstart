@@ -2,12 +2,30 @@ package com.mughees;
 
 import java.util.*;
 
+       /* Problem:
+           There are N people numbered from 1 to N, standing in a queue to withdraw money from an ATM.
+           The queue is formed in ascending order of their number. The person numbered i wants to withdraw amount A[i].
+           The maximum amount a person can withdraw at a time is X. If they need more money than X, they need to go
+           stand at the end of the queue and wait for their turn in line. A person leaves the queue once they have
+           withdrawn the required amount..
+
+           You need to find the order in which all the people leave the queue.
+       */
+
 public class Main {
+
+    static class Customer {
+        int QUEUE_NUMBER;
+        int AMOUNT;
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int testCases = scanner.nextInt();
-        for (int i = 0; i < testCases; i++) {
+        for (int i = 1; i <= testCases; i++) {
+            ArrayList<Customer> queue = new ArrayList<>();
+            ArrayList<Integer> order = new ArrayList<>();
+
             int numOfPeople = scanner.nextInt();
             int maxAmount = scanner.nextInt();
 
@@ -16,35 +34,27 @@ public class Main {
                 customerMoney[j] = scanner.nextInt();
             }
 
-            int[] atmQueue = new int[numOfPeople];
             for (int k = 0; k < numOfPeople; k++) {
-                atmQueue[k] = k + 1;
+                Customer customer = new Customer();
+                customer.QUEUE_NUMBER = k + 1;
+                customer.AMOUNT = customerMoney[k];
+                queue.add(customer);
             }
 
-            Map<Integer, Double> map = new HashMap<>();
-            for (int l = 0; l < numOfPeople; l++) {
-                double visits = (double) customerMoney[l] / maxAmount;
-                String str = String.format("%1.2f", visits);
-                visits = Double.parseDouble(str);
-                map.put(l + 1, visits);
+            while (queue.size() > 0) {
+                Customer customer = queue.remove(0);
+                customer.AMOUNT -= maxAmount;
+                if (customer.AMOUNT > 0) {
+                    queue.add(customer);
+                } else {
+                    order.add(customer.QUEUE_NUMBER);
+                }
             }
 
-            Object[] values = map.values().toArray(new Object[numOfPeople]);
-            Object[] sortedArr = Arrays.copyOf(values, values.length);
-            Arrays.sort(sortedArr);
-            System.out.println(Arrays.toString(values));
-            System.out.println(Arrays.toString(sortedArr));
-
-            Object[] result = new Object[numOfPeople];
-            for (int m = 0; m < numOfPeople; m++) {
-                result[m] = findIndex(values, (Integer) sortedArr[m]);
+            System.out.print("\nCase #" + i + ": ");
+            for (Integer integer : order) {
+                System.out.print(integer + " ");
             }
-            System.out.println(Arrays.toString(result));
         }
-    }
-
-    public static int findIndex(Object arr[], int t) {
-        int index = Arrays.binarySearch(arr, t);
-        return (index < 0) ? -1 : index;
     }
 }

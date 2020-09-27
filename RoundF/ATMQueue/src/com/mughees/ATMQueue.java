@@ -5,16 +5,16 @@ import java.util.Scanner;
 
 public class ATMQueue {
 
-    static class Person {
-        int Number;
-        int Amount;
+    static class Customer {
+        int QUEUE_NUMBER;
+        int AMOUNT;
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int testCases = scanner.nextInt();
         for (int i = 1; i <= testCases; i++) {
-            ArrayList<Person> queue = new ArrayList<>();
+            ArrayList<Customer> queue = new ArrayList<>();
             ArrayList<Integer> order = new ArrayList<>();
 
             int numOfPeople = scanner.nextInt();
@@ -26,26 +26,25 @@ public class ATMQueue {
             }
 
             for (int k = 0; k < numOfPeople; k++) {
-                Person p = new Person();
-                p.Number = k + 1; // add 1 to account array index 0
-                p.Amount = customerMoney[k];
-                queue.add(p);
+                Customer customer = new Customer();
+                customer.QUEUE_NUMBER = k + 1;
+                customer.AMOUNT = customerMoney[k];
+                queue.add(customer);
             }
 
             while (queue.size() > 0) {
-                Person p = queue.remove(0);
-                p.Amount -= maxAmount;
-                if (p.Amount > 0) {
-                    queue.add(p);
+                Customer customer = queue.remove(0);
+                customer.AMOUNT -= maxAmount;
+                if (customer.AMOUNT > 0) {
+                    queue.add(customer);
                 } else {
-                    order.add(p.Number);
+                    order.add(customer.QUEUE_NUMBER);
                 }
             }
 
             System.out.println("\nCase #" + i + ": ");
             for (Integer integer : order) {
-                System.out.print(integer);
-                System.out.print(" ");
+                System.out.print(integer + " ");
             }
         }
     }
