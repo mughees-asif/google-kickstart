@@ -10,6 +10,7 @@
 
 * Solutions in **Java**
 * Problem statement is in the solution
+* To contribute: clone the repo, create a branch, refine code, push to master 
 
 ----------------------------------------------------------------------------------------------
 
